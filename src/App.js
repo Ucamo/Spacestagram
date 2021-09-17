@@ -6,7 +6,7 @@ import MainMenu from './components/UI/MainMenu';
 
 function App() {
     //Handle favorites in local storage.
-    let storedFavorites  = JSON.parse(localStorage.getItem("my_favorites"));
+    let storedFavorites  = JSON.parse(localStorage.getItem("my_favorites")) || [];
     const [ favorites, setFavorites ] = useState(storedFavorites);
 
     const FavHandler = newItem =>{

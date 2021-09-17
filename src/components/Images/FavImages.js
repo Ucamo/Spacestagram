@@ -3,7 +3,7 @@ import Favorite from './Favorite';
 
 const FavImages = props =>{
     //Get favorite images from local storage
-    let storedFavorites  = JSON.parse(localStorage.getItem("my_favorites"));
+    let storedFavorites  = JSON.parse(localStorage.getItem("my_favorites")) || [];
 
     const FavHandler = newItem =>{
         props.onFavClicked(newItem);        
