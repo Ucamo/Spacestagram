@@ -16,7 +16,13 @@ const Home = props => {
 
     useEffect(() => {
         fetch(urlService)
-            .then(res => res.json())
+        .then((response) => {
+            if (response.ok) {
+              return response.json();
+            } else {
+              throw new Error('There was an error processing the request');
+            }
+          })
             .then(
                 (data) => {
                     setIsLoaded(true);
